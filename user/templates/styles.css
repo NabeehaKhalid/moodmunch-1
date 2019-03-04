@@ -1,0 +1,74 @@
+html,
+      body {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: WhiteSmoke;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+      /* start of navBar */
+
+      .navbar-default {
+        padding-left: 1vw;
+        transition: 750ms ease;
+        width: 100vw;
+        max-height: 20% !important;
+      }
+      .affix {
+        top: 0;
+        width: 100vw;
+        z-index: 9999 !important;
+      }
+      .navbar-default.scrolled {
+        background-color: #fffffe !important;
+      }
+      .navbar-nav {
+        margin-right: 0;
+        float: right;
+      }
+      .navbar-nav > li {
+        font-size: 15px;
+        float: right; /*Remove this to stack elements*/
+        padding-left: 1vw !important;
+      }
+      /* .navbar-default .navbar-nav > li > a:hover,
+      .navbar-default .navbar-nav > li > a:focus {
+        position: relative;
+        color: #000;
+        text-decoration: none;
+      } */
+      .navbar-default .navbar-nav > li > a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 8%;
+        bottom: 10px;
+        left: 0;
+        background-color: #f9e0cc;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+      .navbar-default .navbar-nav > li > a:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+      .navbar-brand {
+        color: #010000 !important;
+        font-size: inherit;
+        font-size: 20px;
+        position: absolute;
+        margin-left: : 5%;
+      }
+      .narbar-logo {
+        float: left;
+        margin-top: 0.5vw;
+        height: 35px;
+      }
+      /* end of navBar */

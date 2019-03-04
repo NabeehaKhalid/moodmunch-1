@@ -1,14 +1,210 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.mt{
+			margin-top: 100px !important;
+		}
+
+		.pr{
+			padding-right: 30px;
+		}
+
+		*{
+			text-align: center;
+			font-family: Helvetica, sans-serif;
+			color: black;
+			top:50%;
+			font-weight: lighter;
+			background-color:  #e6e6e6;
+		}
+		.textt {
+			color: red;
+			left:50%;
+		}
+		input[type=text], input[type=password]{
+			top:50%;
+			width:300px;
+			height:50px;
+			padding:10px;
+			border-left:none;
+			border-right:none;
+			border-top:none;
+			border-bottom-width:medium;
+			border-bottom-color: #000066;
+			background-color: #f2f2f2;
+		}
+		input[type=text]:hover, input[type=password]:hover{
+			border-top-color: #000066;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+		button{
+			width:110px;
+			height: 45px;
+			border-color: #000066;
+			border-width: medium;
+			transition-duration: 0.3s;
+		}
+		button:hover{
+			opacity:0.8;
+			background-color: #000066;
+			color: white;
+		}
+				/* Extra styles for the cancel button */
+		.cancelbtn {
+		  background-color: #f44336;
+		}
+
+		/* Center the image and position the close button */
+		.imgcontainer {
+		  text-align: center;
+		  margin: 24px 0 12px 0;
+		  position: relative;
+		}
+
+		/* The signUp (background) */
+		.signUp {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  left: 0;
+		  top: 0;
+		  width: 100%;; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: white; /* Fallback color */
+		  background-color: rgb(230,230,230,0.8); /* Black w/ opacity */
+		  padding-top: 60px;
+		}
+		/* signUp Content/Box */
+		.signUp-content {
+		  background-color: white;
+		  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+			padding: 20px;
+			max-width: 400px;
+		}
+
+		.image{
+			overflow: hidden;
+
+		}
+
+		.sliding-background {
+		  background: url("https://i.ibb.co/qp2YbX4/Design-5.png") repeat-x;
+		  height: 400px;
+		  width: 9075px;
+		  animation: slide 60s linear infinite;
+		}
+
+		@keyframes slide{
+		  0%{
+		    transform: translate3d(0, 0, 0);
+		  }
+		  100%{
+		    transform: translate3d(-1692px, 0, 0);
+		  }
+		}
+
+		/* Add Zoom Animation*/
+		.animate {
+		  -webkit-animation: animatezoom 0.6s;
+		  animation: animatezoom 0.6s
+		}
+
+		@-webkit-keyframes animatezoom {
+		  from {-webkit-transform: scale(0)}
+		  to {-webkit-transform: scale(1)}
+		}
+
+		@keyframes animatezoom {
+		  from {transform: scale(0)}
+		  to {transform: scale(1)}
+		}
+
+		/* Change styles for span and cancel button on extra small screens */
+		@media screen and (max-width: 300px) {
+		  span.psw {
+		     display: block;
+		     float: none;
+		  }
+		  .cancelbtn {
+		     width: 100%;
+		  }
+		}
+</style>
 	<title>Login</title>
     <!--Load Bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<link
+      rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+
+
 <body>
-	<div class="container-fluid">
-        <h3 class="jumbotron text-center">Login goes here :D</h3>
-    </div>
-</body>
+	<div class="container-fluid mt">
+		<h1>LOGIN</h1>
+		<p></p>
+
+		<form>
+			<div>
+				<label for="username"><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" name="password">
+			</div>
+			<p></p>
+			<div>
+				<label for="password"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" name="password">
+			</div>
+			<p></p>
+		</form>
+
+		<button type="submit">Login</button>
+		<button onclick="document.getElementById('signUp').style.display='block'">Sign Up</button>
+	</div>
+
+	<div id="signUp" class="signUp animate">
+		<div class="container signUp-content" >
+			<form>
+				<h1>SIGN UP</h1>
+				<p></p>
+				<div>
+					<label class="pr" for="name"><b>Name</b></label>
+					<input type="text" placeholder="Enter Name" name="name" >
+				</div>
+				<p></p>
+				<div>
+					<label for="username"><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" name="password">
+				</div>
+				<p></p>
+				<div>
+					<label for="password"><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="password">
+				</div>
+				<p></p>
+				<button type="submit">Sign Up</button>
+				<button class="cancelbtn" href="/login.html">Cancel</button>
+			</form>
+		</div>
+		<p></p><p></p>
+  </div>
+
+
+
+	<script>
+		// Get the signUp
+		var signUp = document.getElementById('signUp');
+		// When the user clicks anywhere outside of the signUp, close it
+		window.onclick = function(event) {
+		    if (event.target == signUp) {
+		        signUp.style.display = "none";
+		    }
+		}
+	</script>
+
+	</body>
+
 </html>
